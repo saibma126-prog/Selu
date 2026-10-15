@@ -85,7 +85,7 @@ const CONFIG = {
   SUPABASE_URL:  "https://clzgejqggmnujhgkxfss.supabase.co",        // e.g. https://abcd1234.supabase.co
   SUPABASE_KEY:  "sb_publishable_NOJ-qPCUwS3qPFtRWqo7cQ_AwknnuWe",   // Project Settings > API > anon public key
   CLOUD_NAME:    "pfyrqr7j",    // Cloudinary dashboard
-  UPLOAD_PRESET: "selu"    // Settings > Upload > Upload presets (Unsigned)
+  UPLOAD_PRESET: "seluuu"    // Settings > Upload > Upload presets (Unsigned)
 };
 /* ============================================================ */
 
@@ -248,7 +248,8 @@ $("#auth").onclick = async () => { if(admin()){ await sb.auth.signOut(); toast("
 window.addEventListener("hashchange", () => { render(); scrollTo(0,0); });
 
 /* ---------- Boot + real-time ---------- */
-sb.auth.onAuthStateChange((_, session) => { S.user = session?.user || null; render(); });
+sb.auth.onAuthStateChange((_, session) => { S.user = session?.user || null; render(); 
+});
 (async () => {
   const { data } = await sb.auth.getSession(); S.user = data.session?.user || null;
   await load();
